@@ -1,0 +1,10 @@
+object Solution {
+    def maxProfit(prices: Array[Int]): Int = {
+        var (profit,buy)=(0,prices(0));
+        for(i<- 1 until prices.size){
+            buy=buy.min(prices(i));
+            profit=profit.max(prices(i)-buy);
+        }
+        profit
+    }
+}
